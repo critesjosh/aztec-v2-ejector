@@ -7,10 +7,6 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "esbenp.prettier-vscode",
-        "dbaeumer.vscode-eslint"
-      ],
       "settings": {
         "github.codespaces.defaultIdleTimeout": 180 // 3 hours
       }
