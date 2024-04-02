@@ -6,6 +6,10 @@ Requirements
 - You'll need a private key funded with at least 0.2 ETH.
 - You'll need a machine with at least 8GB memory, 5GB storage space, and the bandwidth/patience to download 5GB.
 
+If you are running in a codespace, you may need to manually update the machine type for better peformance. I recommending choosing the largest machine that you can, so that it runs as smoothly as possible.
+
+![](./screenshot.png)
+
 ## Ejecting
 
 To exit your funds from the old.zk.money, you will have to run a few commands on your device to get an instance of the rollup running so you can interact with it to withdraw funds. First, open the command-line interface on your device. Then, copy the following command directly into the CLI and press enter:
