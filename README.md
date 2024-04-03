@@ -6,9 +6,6 @@ Requirements
 - You'll need a private key funded with at least 0.2 ETH.
 - You'll need a machine with at least 8GB memory, 5GB storage space, and the bandwidth/patience to download 5GB.
 
-If you are running in a codespace, you may need to manually update the machine type for better peformance. I recommending choosing the largest machine that you can, so that it runs as smoothly as possible.
-
-![](./screenshot.png)
 
 ## Ejecting
 
@@ -27,5 +24,40 @@ The ejector defaults to a gas limit of 2,000,000 and a max price of 100,000,000,
 ```bash
 docker run -ti --rm -p8081:8081 -p3001:3001 -e GAS_LIMIT=3000000 -e MAX_PROVIDER_GAS_PRICE=200000000000 -e PRIVATE_KEY=<funded-key-to-pay-rollup-fee> aztecprotocol/a2-ejector
 ```
+
+## Running in Github Codespaces
+
+If you are running in a codespace, you may need to manually update the machine type for better performance. I recommending choosing the largest machine that you can, so that it runs as smoothly as possible.
+
+![](./screenshot.png)
+
+### Set localStorage
+
+For the UI to work when being served by a codespace, we have to manually set some `localStorage` variables.
+
+In the zk.money web app page, forwarded from your codespace port 3001 (e.g, https://reimagined-space-engine-97gwrjj6jwxfxgvv-3001.app.github.dev/), open the developer console with `Ctrl+Shift+I`
+
+In the Console, enter 
+
+```js
+localStorage.setItem("zm_rollupProviderUrl", "https://reimagined-space-engine-97gwrjj6jwxfxgvv-8081.app.github.dev")
+```
+and 
+
+```js
+localStorage.setItem("zm_graphqlEndpoint", "https://reimagined-space-engine-97gwrjj6jwxfxgvv-8081.app.github.dev/graphql")
+```
+
+**Replace the url with the url of your codespace. You can find the url in the Ports tab of the codespace.**
+
+![](./zkmoney-console.png)
+
+You will also need to set the port visibility to `public` on port 8081 in the Codespace Ports tab.
+
+![](./port.png)
+
+then refresh the page. This will set the environment variables when the application loads.
+
+You should now be able to login to zk.money with your Metamask or wallet connect account.
 
 https://old.zk.money/
