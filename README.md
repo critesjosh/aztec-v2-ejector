@@ -1,5 +1,8 @@
 # Aztec Ejector
 
+- [Aztec Connect Ejector](#aztec-connect-ejector)
+- [Aztec V2 Ejector](#aztec-v2-ejector)
+
 ## Aztec Connect Ejector
 
 Requirements
